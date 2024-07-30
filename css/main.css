@@ -1,0 +1,667 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body{
+    background-color: var(--fundo);
+    height: 100%;
+    color: var(--roxo);
+}
+
+a{cursor: pointer;}
+
+:root{
+    --fundo: #cecfd3;
+    --roxo: #67687e;
+    --azul:#007FFF;
+    --verde: #04bd9b;
+    --vermelho: #6d0227;
+
+}
+
+.left{
+    float: left;
+}
+
+.right{
+    float: right;
+}
+
+.clear{clear: both;}
+
+.w50{
+    width: 48%; 
+}
+
+.w100{
+    width: 100%;
+}
+
+.w33{
+    width: 33%;
+}
+
+.list-content{
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+}
+.list-content input{
+    width: 100%;
+
+}
+.list-content i{
+    color: white;
+}
+.list-content input[type=submit]{
+    position: absolute;
+    border: 0;
+    background-color: var(--verde);
+    color: white;
+    border-radius: 10px;
+    right: -80px;
+    float: right;
+    /*padding: 5px;*/
+    cursor: pointer;
+    width: 70px;
+}
+
+.list-content-add{
+   /* width: 20%;*/
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--roxo);
+}
+
+.list-content-add input[type=submit]{
+     background-color: var(--verde);
+    color: white;
+    border-radius: 10px;
+    border: 0;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    width: 70px;
+}
+
+/*main e outros*/
+
+
+header{
+    width: 100%;
+    background-color: white;
+    padding: 10px 0;
+   /* min-width: 1000px;*/
+}
+
+.container{
+    padding: 0 2%;
+    max-width: 1510px;
+    margin: 0 auto;
+    /*min-width: 900px;*/
+}
+
+.azul{
+    color: var(--azul);
+    text-decoration: underline;
+}
+
+.vermelho{
+    color: var(--vermelho);
+    text-decoration: underline;
+}
+
+
+.lixo{
+    color: var(--vermelho) !important;
+    padding-left: 15px;
+}
+
+.close{
+    cursor: pointer;
+}
+
+
+.logo{
+    float: left;
+    width: 250px;
+    height: 65px;
+    background-image: url('../images/logo.png');
+    background-size: cover;
+    left: -50px;
+    background-repeat: no-repeat;
+    background-position: left;
+    position: relative;
+    cursor: pointer;
+}
+
+.direita{
+    float: right;
+}
+
+.topo{
+    background-color: white;
+}
+
+/*página de login*/
+.box-login{
+    max-width: 500px;
+    width: 90%;
+    padding: 60px 2%;
+    background: white;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+    text-align: center;
+}
+
+.logo-login{
+    margin: 0 auto;
+    background-image: url('../images/logo.png');
+    width: 350px;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
+.box-login input{
+    width: 90%;
+    height: 40px;
+    border: 1px solid var(--roxo);
+    border-radius: 15px;
+    padding-left: 8px;
+    margin-top: 8px;
+}
+
+.box-login input[type=submit]{
+    padding: 0;
+    width: 90px;
+    cursor: pointer;
+    background-color: var(--verde);
+    color: white;
+    border: 0;
+    margin-top: 8px;
+}
+
+.erro-login{
+    background-color: #b34a6e;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 2%;
+}
+
+.erro-login i{
+    color: white;
+}
+
+nav{
+    float: right;
+}
+
+li{
+    list-style-type: none;
+    display: block;
+    position: relative;
+}
+
+nav li{
+   top: 25px;
+}
+
+li a{
+    color: var(--roxo);
+   text-decoration: none;
+   padding-left: 20px;
+   padding-right: 20px;
+   padding-bottom: 47px;
+}
+
+.logout{
+    color: #b34a6e;
+    font-size: 15px;
+}
+
+
+.banner{
+    background-color: white;
+    margin-top: 3px;
+    /*min-width: 1000px;*/
+
+}
+
+.banner h2{
+    padding: 10px 0;
+}
+
+.box {
+
+    padding: 40px 40px;
+    width: 100%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+
+}
+
+.auto a{
+    color: white;
+    background-color: var(--azul);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+.list{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+}
+
+
+.list label{
+    width: 100%;
+    display: block;
+    padding: 15px 10px;
+    font-weight: bold;
+}
+
+.list input{
+    color: var(--roxo);
+    padding: 0 10px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--fundo);
+}
+
+.list input:focus{
+    outline: none;
+}
+
+.list i{
+    padding-right: 10px;
+}
+/*novo create*/
+
+.titulo{
+    width: 100%;
+    border-collapse: collapse;
+
+}
+
+.tr_input  td{
+   
+    border-bottom: 1px solid #ccc; 
+}
+
+.row-table{
+    margin-bottom: 10px;
+   padding-top: 10px;
+}
+
+.linha-tabela {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 10px;
+
+}
+
+.linha-tabela div {
+    flex: 1; 
+    padding-right: 8px;
+    text-align: left; 
+
+}
+
+.linha-tabela div select{
+    width: 100%;
+}
+
+.linha-tabela label{
+    font-weight: bold;
+}
+
+.list-content-add{
+    /* width: 20%;*/
+     margin-bottom: 10px;
+     padding-bottom: 10px;
+     border-bottom: 2px solid var(--roxo);
+ }
+ 
+ .list-content-add input[type=submit]{
+      background-color: var(--verde);
+     color: white;
+     border-radius: 10px;
+     border: 0;
+     padding: 10px;
+     margin-left: 10px;
+     cursor: pointer;
+    width: 200px;
+    font-weight: bold;
+ }
+
+.add-rec{
+    color: var(--verde);
+    cursor: pointer;
+}   
+/*fim novo create*/
+th {
+    padding-right: 5px;
+}
+
+tbody input{
+    width: 100%;
+    padding: 0 10px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--fundo);
+    color: var(--roxo);
+}
+tbody input:focus{
+    outline: none;
+}
+
+tbody input[readonly]{
+    background-color:  #fefcc8;
+}
+
+select{
+    width: 100px;
+    appearance: none;
+    background-color: #fff;
+    border: 1px solid var(--fundo);
+    background-image: url(../images/chevron-down.svg);
+    background-position: right .5rem center;
+    background-repeat: no-repeat;
+    background-size: 1.5em 1.5em;
+    border-radius: 10px;
+    height: 30px;
+    padding: 0 10px;
+    color: var(--roxo);
+}
+
+.total:focus{
+    outline: none;
+}
+
+.total{
+    width: 300px;
+    padding: 0 10px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid var(--fundo);
+background-color:  #fefcc8;
+    color: var(--roxo);
+}
+
+.tot_auto {
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+  
+.total-container {
+  align-self: flex-end;
+}
+  
+.botao-salvar {
+  margin-top: 20px; 
+  align-self: flex-end; 
+}
+
+.totalizar {
+    padding-top: 40px;
+}
+
+.totalizar a, .botao-salvar a{
+    color: white;
+    background-color: var(--verde);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.totalizar button, .botao-salvar button{
+    color: white;
+    background-color: var(--azul);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+/*pagina erro*/
+
+.p404{
+    text-align: center;
+}
+
+.p404 h2{
+    color: var(--vermelho);
+    border-top: 2px solid var(--vermelho);
+}
+
+.p404 i, .p404 p{
+    color: var(--vermelho);
+}
+
+.p404 a{
+    color: var(--vermelho);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.p404 .box{
+    padding: 200px;
+}
+
+/*pagina tabelas*/
+
+.content{
+    width: calc(100% - 220px);
+    float: right;
+}
+
+.box-tabela{
+    padding: 40px 40px;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    border-radius: 20px;
+ 
+}
+
+.corpo {
+    margin: 0;
+}
+
+.corpo{
+    display: inline;
+}
+
+.header-tabela{
+    padding-top: 10px;
+    background-color: #a4a4a6;
+    width: 100%;
+}
+
+.header-tabela i {
+    margin-bottom: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.menu-tabela{
+   position: relative;
+   overflow-y: auto;
+   float: left;
+   width: 200px;
+   background-color: #a4a4a6;
+   margin-top: 39px;
+}
+
+.menu-btn i{
+    color: white;
+}
+
+.itens-menu .tb_select{
+    color: #a4a4a6;
+    background-color: white;
+}
+
+.menu-tabela h2{
+    font-size: 16px;
+    color: white;
+    font-weight: 300;
+    background-color: #6d6d6d;
+
+    padding: 8px 5px;
+}
+
+.menu-tabela a{
+    font-size: 15px;
+    color: white;
+    display: block;
+    text-decoration: none;
+    font-weight: 300;
+    padding: 5px;
+    background-color: #a4a4a6;
+    border-bottom: 2px solid #6d6d6d;
+}
+
+.itens-menu{
+    width: 100%;
+}
+
+.box-tabela h2{
+    margin-bottom: 25px;
+}
+
+.table-list{
+    margin: 20px 0;
+}
+
+
+.table-list .row-list:nth-of-type(1) i{
+    color: white;
+    cursor: default;
+}
+
+.table-list .row-list:nth-of-type(1){
+    background-color: var(--verde);
+    color: white !important;
+    font-weight: bold;
+
+    border: 0;
+}
+
+.table-list .row-list{
+    padding: 10px 10px;
+    border-bottom: 1px solid var(--roxo);
+}
+
+.col-list{
+    float: left;
+    width: 20%;
+}
+
+.row-list i{
+    cursor: pointer;
+}
+
+.box-tabela form{
+    margin: 30px 0;
+}
+
+.box-tabela form label{
+    display: block;
+    position: relative;
+    left: 10px;
+    font-weight: 800;
+ }
+
+.box-tabela form input[type=text],
+.box-tabela form input[type=password]{
+    border-radius: 10px;
+    width: 100%;
+    padding: 8px;
+    margin: 8px 0;
+    border: 1px solid var(--roxo);
+    color: var(--roxo);
+    background-color: #ececec;
+}
+
+.box-tabela input:focus{
+    outline: none;
+}
+
+.box-tabela .botao-salvar {
+    color: white;
+    background-color: var(--azul);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    border: 0;
+    cursor: pointer;
+}
+
+/*Mensagem de alerta*/
+
+.box-alert{
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 8px;
+    text-align: center;
+    color: white;
+    border-radius: 10px;
+}
+
+.sucesso{
+    background: #a5d6a7;
+}
+
+.erro{
+    background: #b34a6e;
+}
+
+.menu-active{
+    background-color: #949496 !important;
+}
+
+.menu-active::before{
+    content: '> ';
+}
+
+/*responsivo*/
+
+@media screen and (max-width: 840px) {
+   .menu-desktop{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 780px) {
+    .menu-tabela{
+        display: none;
+        width: 0;
+        padding: 0;
+    }
+
+    .content{
+        width: 100%;
+    }
+}

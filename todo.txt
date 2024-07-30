@@ -1,0 +1,25 @@
+Fazer o responsivo
+(i) de informações em cada campo da geração do auto
+alterar o formulario de criação do auto novo layout, pois como vai incluir as informações dos juros e multa além do % em R$ tambem
+alterar a tela de criação do auto incluindo o cod_pessos -- se existir post buscar fazer a função
+criar sistemas de permições
+gerar o pdf do auto
+criar a tela do auto a fim de puxar os autos do BD
+criar as tela das tabelas, puxando os dados do baoco e podendo alterá-las
+controle de permições:  1 - Usuário             -   cadastro ctb
+                                                -   visualiza selic
+                                                -   visualiza anexo
+                        2 - Sub-administrador   -   cadastro ctb
+                                                -   cadastro selic
+                                                -   cadastro anexo
+                        3 - Administrador       -   cadastro ctb
+                                                -   cadastro selic
+                                                -   cadastro anexo
+                                                -   cadastro usuario
+
+                        4 - administrador Geral - Todas permições 
+
+
+
+criar sistema de login - OK
+criar o BD - aplicanto javascript no menu - tela de tabelas

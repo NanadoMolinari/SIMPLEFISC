@@ -1,0 +1,6 @@
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^([^/]+)/?([^/]*)$ index.php?url1=$1&url2=$2 [QSA,L]
+
+Options -Indexes
