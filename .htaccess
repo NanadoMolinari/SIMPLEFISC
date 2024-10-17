@@ -4,3 +4,7 @@ RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteRule ^([^/]+)/?([^/]*)$ index.php?url1=$1&url2=$2 [QSA,L]
 
 Options -Indexes
+
+<Files "buscar_dados.php">
+    Require all granted
+</Files>

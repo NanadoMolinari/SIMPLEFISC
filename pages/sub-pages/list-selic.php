@@ -1,6 +1,6 @@
 <?php
 
-$sql = MySql::conectar()->prepare("SELECT * FROM `tb_seclic`");
+$sql = MySql::conectar()->prepare("SELECT * FROM `tb_seclic` order by dt_selic desc");
 $sql->execute();
 $listSELIC = $sql->fetchAll();
 

@@ -60,7 +60,7 @@
                         <table class="titulo">
                                                     
                             <tbody class='tbody'>
-                                 <tr class='tr_input'>
+                                 <tr class='tr_input' id='linha_1'>
                                     <td class="row-table">
                                         <div class="linha-tabela">
                                             <div><label>PA <i class="fa-regular fa-circle-question"></i></label></div>
