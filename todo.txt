@@ -8,6 +8,8 @@ Fazer função de confirmação, para que pergunte apos cada passo
 OK - cruds, iniciar pela tela auto PHP
 criar sistemas de permições
 gerar o pdf do auto
+gerar demostrativo
+campos tot juros, multa na tabela auto
 OK - criar a tela do auto a fim de puxar os autos do BD - OK
 OK - criar as tela das tabelas, puxando os dados do baoco e podendo alterá-las - OK
 controle de permições:  1 - Usuário             -   cadastro ctb
@@ -27,4 +29,10 @@ controle de permições:  1 - Usuário             -   cadastro ctb
 Criar tela lançamento auto
 OK - criar sistema de login - OK
 criar o BD - aplicanto javascript no menu - tela de tabelas
+incluir juros de mora no calculo
 
+Atualizar git
+git status
+git add .
+git commit -m "Descrição das alterações feitas"
+git push origin main  

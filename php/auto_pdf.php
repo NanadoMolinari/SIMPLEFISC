@@ -37,15 +37,15 @@ $html = '
 <html>
 <head>
     <style>
-        body { font-family: Arial, sans-serif; }
+        
         .clear {clear: both;}
-        .header { align-items: center; margin-bottom: 20px; padding: 10px; } 
+        .header { align-items: center; margin-bottom: 20px; padding-bottom: 10px; } 
         .logo {
                 float: left; 
                 height: 80px; 
                 width: 200px;
                 position:absolute;
-                top: 2px;
+                top: -7px;
                 margin-left: 5px;
                 background-image: url("http://localhost/SIMPLEFISC/images/logo.png");
                 background-size: cover;
@@ -64,6 +64,27 @@ $html = '
         .valores table { width: 100%; border-collapse: collapse; }
         .valores th, .valores td { border: 1px solid #000; padding: 8px; text-align: center; }
         .assinatura { margin-top: 40px; text-align: center; }
+        .info {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .info td {
+            border: 1px solid black;
+            padding: 8px;
+        }
+        .info tr td:first-child {
+            width: 50%;
+        }
+        .info tr:nth-child(3), .info tr:nth-child(5) {
+            text-align: center;
+            font-weight: bold;
+        }
+             .info tr:nth-child(2) td {
+        border: none; 
+        }
+        .descricao{
+            font-size: 12px;
+        }
     </style>
 </head>
 <body>
@@ -78,12 +99,27 @@ $html = '
     </div> <div class="clear"></div>
    
     
-    <div class="info">
-        <div><strong>Autuado:</strong> ' . $auto['razao_social'] . '</div>
-        <div><strong>CPF/CNPJ:</strong> ' . $auto['CNPJ'] . '</div>
-        <div><strong>Relato:</strong> ' . $auto['desc_relato'] . '</div>
-        <div><strong>Fundamentação Legal:</strong> ' . $auto['desc_infrigencia_legal'] . '</div>
-    </div>
+    <table class="info">
+    <tr>
+        <td><strong>Autuado:</strong>' . $auto['razao_social'] . '</td>
+        <td><strong>CPF/CNPJ:</strong>' .  $auto['CNPJ'].'</td>
+    </tr>
+     <tr>
+        <td colspan="2">&nbsp;</td>
+    </tr>
+    <tr>
+        <td colspan="2"><strong>Relato:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="descricao">' . $auto['desc_relato'] .'</td>
+    </tr>
+    <tr>
+        <td colspan="2"><strong>Fundamentação Legal:</strong></td>
+    </tr>
+    <tr>
+        <td colspan="2" class="descricao">' . $auto['desc_infrigencia_legal'] . '</td>
+    </tr>
+</table>
 
     <div class="valores">
         <table>
