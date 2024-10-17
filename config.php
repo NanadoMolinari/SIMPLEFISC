@@ -12,7 +12,7 @@
    define('HOST','localhost');
    define('USER','root');
    define('PASSWORD','');
-   define('DATABASE','SIMPLEFISC');
+   define('DATABASE','isssimples');
 
    /*Funções Gerais */
    function selecionadoMenu($par){

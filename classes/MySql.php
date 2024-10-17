@@ -1,4 +1,5 @@
 <?php
+//require '../config.php';
     class MySql{
         private static $pdo;
         public static function conectar(){

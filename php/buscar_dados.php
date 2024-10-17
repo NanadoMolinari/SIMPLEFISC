@@ -9,6 +9,36 @@ function conectarBanco() {
     }
     return $conexao;
 }
+
+function buscarAliquota($conexao, $valor, $anexo)
+{
+    $sql = "SELECT aliquota, valor_deduzir, aliquota_iss FROM `simples_aliquota` WHERE limite_minimo <= ? AND limite_maximo >= ? AND anexo = ?";
+    //$result = $conexao->prepare($sql);
+    $stmt = $conexao->prepare($sql);
+    $stmt->bind_param('dds', $valor, $valor, $anexo);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $aliquota = $row["aliquota"];
+        $vr_deduzir = $row['valor_deduzir'];
+        $aliquota_iss = $row['aliquota_iss'];
+
+        $resultado = ((($valor * ($aliquota /100)) - $vr_deduzir) / $valor) * 100;
+        $resultado = $resultado * ($aliquota_iss / 100);
+        if($resultado > 5){
+            $resultado = 5;
+        }
+        if($resultado < 2){
+            $resultado = 2;
+        }
+        $resultado = number_format($resultado, 2, '.', '');
+        return $resultado;
+    } else {
+        return "Nenhuma alíquota encontrada para o valor e anexo especificados.";
+    }
+}
+
 function buscarSomaSelic($conexao, $mesAno) {
   
     // Divide a string $mesAno em mês e ano
@@ -20,14 +50,10 @@ function buscarSomaSelic($conexao, $mesAno) {
 
     // Calcula a data de início e a data de fim
     $dataInicio = date('Y-m-01', strtotime("$ano-$mes"));
-    $dataInicio = date('Y-m-d', strtotime($dataInicio . ' +1 month')); 
+    $dataInicio = date('Y-m-d', strtotime($dataInicio . ' +2 month')); 
     $dataFim = date('Y-m-d', strtotime('first day of -1 month'));
-
-    // Adiciona logging para verificação
-    error_log("Data Início: " . $dataInicio);
-    error_log("Data Fim: " . $dataFim);
     
-    $sql = "SELECT SUM(vr_selic) AS total_selic FROM tb_seclic WHERE dt_selic BETWEEN ? AND ?";
+    $sql = "SELECT SUM(valor_selic) AS total_selic FROM simples_selic WHERE data_selic BETWEEN ? AND ?";
     $stmt = $conexao->prepare($sql);
     $stmt->bind_param('ss', $dataInicio, $dataFim);
     $stmt->execute();
@@ -49,9 +75,17 @@ if ($conexao->connect_error) {
 }
 
 
+$rbt12Declarado = $_GET['RBT12declarado'];
+$rbt12Apurado = $_GET['RBT12Apurado'];
+$anexo = $_GET['anexo'];
 $data = $_GET['data'];
 
+$aliquota = buscarAliquota($conexao, $rbt12Declarado, $anexo);
+$mesAno = date('Y-m', strtotime($data));
 $somaSelic = buscarSomaSelic($conexao, $data);
+$aliquotaApurada = buscarAliquota($conexao, $rbt12Apurado, $anexo);
 
-echo $somaSelic;
+echo $aliquota . '|' . $somaSelic . '|' . $aliquotaApurada;
+
+$conexao->close();
 ?>

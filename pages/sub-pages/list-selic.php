@@ -1,6 +1,6 @@
 <?php
 
-$sql = MySql::conectar()->prepare("SELECT * FROM `tb_seclic` order by dt_selic desc");
+$sql = MySql::conectar()->prepare("SELECT * FROM `simples_selic` order by data_selic desc");
 $sql->execute();
 $listSELIC = $sql->fetchAll();
 
@@ -34,10 +34,10 @@ $listSELIC = $sql->fetchAll();
             ?>
             <div class="row-list">
                 <div class="col-list">
-                    <span><?php echo date('m/Y',strtotime($value['dt_selic'])) ?></span>
+                    <span><?php echo date('m/Y',strtotime($value['data_selic'])) ?></span>
                 </div><!--col-list-->
                 <div class="col-list">
-                    <span><?php echo $value['vr_selic'] ?></span>
+                    <span><?php echo $value['valor_selic'] ?></span>
                 </div><!--col-list-->
                 <div class="col-list">
                     <i class="fa-solid fa-pen-to-square azul"></i>

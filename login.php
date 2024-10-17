@@ -17,15 +17,15 @@
                 if(isset($_POST['acao'])){
                     $user = $_POST['user'];
                     $password = $_POST['password'];
-                    $sql = MySql::conectar()->prepare( "SELECT * FROM `tb_admin_usuarios` WHERE login_usuario = ? and senha_usuario = ?");
+                    $sql = MySql::conectar()->prepare( "SELECT * FROM `admin_usuarios` WHERE login_usuario = ? and senha = ?");
                     $sql->execute(array($user,$password));
                     if($sql->rowCount() == 1){
                         $info = $sql->fetch();
                         $_SESSION['login'] = true;
                         $_SESSION['user'] = $user;
                         $_SESSION['password'] = $password;
-                        $_SESSION['nivel'] = $info['id_cargo'];
-                        $_SESSION['nome'] = $info['nome_usuario'];
+                        $_SESSION['nivel'] = $info['cod_cargo'];
+                        $_SESSION['nome'] = $info['nome'];
                         header('Location: '.INCLUDE_PATH);
                         die();
                     }else{

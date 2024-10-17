@@ -1,11 +1,15 @@
 Fazer o responsivo
+Atualizar o BD com as novas tabelas modeladas
 (i) de informações em cada campo da geração do auto
-alterar o formulario de criação do auto novo layout, pois como vai incluir as informações dos juros e multa além do % em R$ tambem
-alterar a tela de criação do auto incluindo o cod_pessos -- se existir post buscar fazer a função
+Fazer o modal para RBT12D e RBT12A
+Criar tela lançamento auto
+Formatação dos numeros reais para o padrao BR
+Fazer função de confirmação, para que pergunte apos cada passo
+OK - cruds, iniciar pela tela auto PHP
 criar sistemas de permições
 gerar o pdf do auto
-criar a tela do auto a fim de puxar os autos do BD
-criar as tela das tabelas, puxando os dados do baoco e podendo alterá-las
+OK - criar a tela do auto a fim de puxar os autos do BD - OK
+OK - criar as tela das tabelas, puxando os dados do baoco e podendo alterá-las - OK
 controle de permições:  1 - Usuário             -   cadastro ctb
                                                 -   visualiza selic
                                                 -   visualiza anexo
@@ -20,6 +24,7 @@ controle de permições:  1 - Usuário             -   cadastro ctb
                         4 - administrador Geral - Todas permições 
 
 
-
-criar sistema de login - OK
+Criar tela lançamento auto
+OK - criar sistema de login - OK
 criar o BD - aplicanto javascript no menu - tela de tabelas
+

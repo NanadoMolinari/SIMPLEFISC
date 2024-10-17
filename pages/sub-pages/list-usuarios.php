@@ -37,7 +37,7 @@
                     <span><?php echo $value['cod_usuario'] ?></span>
                 </div><!--col-list-->
                 <div class="col-list">
-                    <span><?php echo $value['nome_usuario'] ?></span>
+                    <span><?php echo $value['nome'] ?></span>
                 </div><!--col-list-->
                 <div class="col-list">
                     <span><?php echo $value['desc_cargo'] ?></span>

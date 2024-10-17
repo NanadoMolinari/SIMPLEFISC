@@ -19,7 +19,8 @@
 
     <header>
         <div class="container ">
-           <a href="<?php echo INCLUDE_PATH;?>"> <div class="logo">
+           <a href="<?php echo INCLUDE_PATH;?>"> 
+            <div class="logo">
                 
             </div><!--logo--></a>
             <div class="menu-desktop">
@@ -40,10 +41,11 @@
     </header>
     <?php
         $url = isset($_GET['url1']) ? $_GET['url1'] : 'home';
-        if(file_exists('pages/'.$url.'.php')){
-            
+        if ($url == 'list_auto') {
+            include('pages/list_auto.php');
+        } elseif(file_exists('pages/'.$url.'.php')) {
             include('pages/'.$url.'.php');
-        }else{
+        } else {
             include('pages/p-404.php');
         }
     ?>
